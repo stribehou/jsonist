@@ -39,7 +39,7 @@ function collector (uri, options, callback) {
       try {
         ret = JSON.parse(data.toString())
       } catch (e) {
-        var err = new SyntaxError('JSON parse error: ' + e.message, e)
+        var err = new SyntaxError('JSON parse error: ' + e.message + 'data was : ' + data.toString(), e)
         err.data = data
         err.response = request.response
         return callback(err)
